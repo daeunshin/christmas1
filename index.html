@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>christmas</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<style>
+	*{font-family: 'Lobster', cursive; }
+	html{font-family: 'Lobster', cursive;}
+
+	body {background: #F9CED9;}	
+
+	#one {position: absolute; width: 1700px; height:700px; left: calc(50% - 850px); animation: blur 1s forwards; animation-play-state: paused; }
+	@keyframes blur{from{} to{filter: blur(20px) opacity(40%);}}
+	
+	#switchbox{height: 130px; position: absolute; left:calc(50% + 330px);}
+
+		#switch1{height: 130px; position: absolute; top: 300px; opacity: 1; cursor:pointer;}
+		#switch1:hover{opacity: 0;}
+
+		#switch2{height: 130px; position: absolute; top: 300px; opacity: 1;}
+
+	#center{width:450px; height:800px;position: absolute; left:calc(50% - 220px); top:150px; animation: opa 1s forwards; animation-play-state: paused;
+		}
+
+		#fairy1{width: 250px; position: absolute; left: 240px; top: 230px; animation: turn 1s forwards; 
+		animation-play-state: paused;}
+		#fairy2{width: 250px; position: absolute; left: -40px; top: 180px; animation: turn 1s forwards;
+			animation-delay: 1s; opacity: 0;
+			animation-play-state: paused;}
+		#fairy3{width: 250px; position: absolute; left: 40px; top: 40px; animation: turn 1s forwards;
+			animation-delay: 2s; opacity: 0;
+			animation-play-state: paused;}
+		#fairy4{width: 210px; position: absolute; left: 180px; top: 80px; animation: turn 1s forwards; opacity: 0;
+			animation-delay: 3s;
+			animation-play-state: paused;}
+
+		@keyframes turn{
+			from{opacity: 0; transform:rotate3d(0,1,0,-180deg);}
+			to{opacity:1;transform: rotate3d(0,1,0,0deg);}
+		}
+
+		#boxbox{width: 200px; height: 300px; position: absolute; top: 250px; left:  calc(50% - 100px); animation: disappear 1.3s forwards; animation-delay: 6s; animation-play-state: paused;}
+		@keyframes disappear{from{}to{opacity: 0; z-index: -1;}}
+
+		#box{width: 180px; position: absolute; top: 170px; left: calc(50% - 90px);}
+		#boxcap{width: 190px; position: absolute; top: 110px; left: calc(50% - 95px); animation: open 1.3s forwards; 
+			animation-play-state: paused; 
+			animation-delay: 4s;
+			cursor:pointer;}
+		@keyframes open{from{top:110px;}to{top: -30px;}}
+		
+
+		#triangle{ position: absolute; left: calc(50% - 280px);
+			width: 0;height: 0; 
+			border-left: 280px solid transparent;
+			border-right: 280px solid transparent;
+			border-bottom: 610px solid #FF1DA4;
+			animation: on 1s forwards;
+			animation-play-state: paused;
+			}
+		@keyframes on{
+		from {transform:scaleX(0);}
+		to{transform:scaleX(1);}
+		}
+
+		#mini {position: absolute; width:70px; left: calc(50% - 35px); top: 430px; animation: cardturn 2s forwards; animation-play-state: paused; animation-delay: 4.3s; cursor:pointer;}
+		@keyframes cardturn{ from{} to{transform:rotate3d(0,1,0,720deg); top: 320px;} }
+
+		
+
+
+
+	#boom{position: absolute; width: 350px; left: 560px; top: 300px; z-index: -1;}
+
+
+	.snow1 {width: 20px; position: absolute; 
+		animation: snowani 5s linear infinite;
+		animation-play-state: paused;}
+	.snow2 {width: 30px; position: absolute; 
+		animation: snowani 5s linear infinite;
+		animation-play-state: paused;}
+	@keyframes snowani{
+		from{margin-top: 0px;}
+		to{margin-top: 600px; transform:rotate3d(1,1,0,360deg);}
+	}
+
+	#clocktext{
+		text-align: center;
+		font-size: 40px;
+		margin-top: 40px;
+		color: #C1003C;
+		animation:opa 0.1s forwards;
+		animation-play-state: paused; 
+	}
+
+	#clock{
+		position: relative;
+		text-align: center;
+		font-size: 40px;
+		margin-top: -30px;
+		color: #C1003C;			
+		animation:opa 0.1s forwards;
+		animation-play-state: paused;	
+	}
+	@keyframes opa{ from{opacity: 0;} to{opacity: 1;} }
+	
+	.card {width:70px; height: 98.34px; position: absolute; top:560px;
+			   left:50.3%; transform: translate(-50%,-50%);
+				animation: appear 1s forwards; animation-play-state: paused; opacity: 1;
+				transition:all 1s ease;}
+	.card img {width: 70px; position: absolute;}
+	.card img:nth-child(1) {transform:translateZ(1px);}
+	@keyframes appear{
+			from{opacity: 0; z-index: -1;}
+			to{opacity: 1; z-index: 2;}
+		}
+
+	#heartfallset{position: absolute; width: 1300px; height: 630px; left:calc(50% - 650px); top: 200px;
+	animation: appear 1s forwards; animation-play-state: paused;}
+		#heartfallset p {font-size: 3.5em; margin-left: 550px; margin-top: 30px; color: #C1003C; text-align: center;}
+		#heart{width: 100px; display: block; cursor: pointer; 
+			animation: appear 1s forwards; animation-play-state: paused;}
+		#heartid{}
+		#heartarrow{ cursor: pointer; }
+	
+
+	#waterset{position: absolute; width: 1300px; height: 630px; left:calc(50% - 650px); top: 200px;
+		animation: appear 1s forwards; animation-play-state: paused;}
+		#waterset img { width: 1000px; left: 120px; top: -50px; position: absolute; }
+		#waterset p {font-size: 3.5em; margin-left: -100px; margin-top: 30px; color: #C1003C; text-align: center;}
+		#water3 {animation: opa 1s forwards; animation-play-state: paused;}
+		#water2 {animation: watering 1.5s forwards cubic-bezier(.92,-0.01,.71,.86); animation-play-state: paused; animation-delay: 1s;}
+		@keyframes watering {
+				from{top: -50px;}
+				to{top: -210px;}}
+		#waterbut{position: absolute; height: 120px; width: 120px; left: 380px; top: 160px; cursor: pointer;}
+		#waterarrow {cursor: pointer;}
+
+
+	
+	.setbackground{background: #F9CED9; width: 1300px; height: 700px; filter: blur(20px) opacity(95%); position: absolute; top: 1px; z-index: -10}
+	.goback{position: absolute; width: 100px; height: 100px; color: white; font-size: 8em; bottom: 100px; right: 100px; border-radius: 50%; border-style: solid; text-align: center; line-height: 0.6;}
+
+	#boxset{position: absolute; width: 1300px; height: 700px; left:calc(50% - 650px); top: 170px;
+		animation: appear 1s forwards; animation-play-state: paused;}
+		#boxset p {font-size: 3.5em; color: #C1003C; text-align: center; margin-top: -15px;}
+		#box1{position: absolute; width: 265px;height: 250px;background: url(box1-0.png); background-size: cover; left: calc(50% - 132.5px); top: 160px;}
+		#box2{position: absolute; width: 290px;height: 75px;background: url(box2-0.png); background-size: cover; left: calc(50% - 145px);top: 215px;}
+		#box3{position: absolute; width: 278px;height: 230px;background: url(box3-0.png); background-size: cover; left: calc(50% - 139px); top: 270px;}
+		#boxarrow {cursor: pointer;}
+
+
+	
+
+	</style>
+
+</head>
+
+<body>
+
+	<div id="one">
+		<!------스위치------>
+		<div id="switchbox">
+			<img src="switch2.png" id="switch2">
+			<img src="switch1.png" id="switch1">
+		</div>
+
+		<div id="center">
+			<!------삼각형------>	
+			<div id="triangle"></div>
+
+			<!------요정------>
+			<img src="fairy3.png" id = fairy3>
+			<img src="fairy4.png" id = fairy4>
+			<img src="fairy2.png" id = fairy2>
+
+			<!------박스,상자------>
+			<img src="cardback.png" id ="mini">
+			<div id="boxbox">
+				<img src="box.png" id="box">
+				<img src="boxcap.png" id="boxcap">
+			</div>
+			
+			<!-- 요정2 -->
+			<img src="fairy1.png" id = fairy1>
+		</div>
+
+	</div>
+	
+	<audio id="tapSound">
+		<source src="tap.mp3" type="audio/mp3">
+	</audio>
+
+	<audio id="bell">
+		<source src="xmassong.mp3" type="audio/mp3">
+	</audio>
+
+	<!------눈내리기1------>
+	<div id="snowdrop">
+		<img src="snow1.png" class="snow1">
+	</div>
+	<div id="snowCon"></div>
+	<!------눈내리기2------>
+	<div id="snowdrop2">
+		<img src="snow2.png" class="snow2">	
+	</div>
+	<div id="snow2Con"></div>
+
+	<!------시계------>
+	<p id="clocktext">Until Christmas</p>
+	<p id="clock"></p>
+
+
+
+
+	<div>
+		<div class="card">
+			<img class="fc" src="cardf0.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf1.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf2.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf3.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf4.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf5.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf6.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf7.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf8.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+
+		<div class="card">
+			<img class="fc" src="cardf9.png">
+			<img class="bc" src="cardback.png" >
+		</div>
+	</div>
+
+	<!--하트 드래그앤드롭-->
+	
+	<div id="heartfallset">
+		<div class="setbackground"></div>
+
+		
+		<img src="heart.png" id="heart" class="drag" style="left:200px; top: 100px;">
+		
+		<img src="fall.png" style="width: 300px; left: 300px; top: 350px; position: absolute;">
+		<img src="basket.png" style="width: 250px; left: 800px; top: 300px; position: absolute;">
+		<p>Pick up hearts for her!<br>⬇︎</p>
+		<div class="goback" id="heartarrow"><<br></div>
+	</div>
+
+	
+
+	<!--물주기-->
+	<div id="waterset">
+		<div class="setbackground"></div>
+		<audio id="watersound">
+		<source src="watersound.mp3" type="audio/mp3">
+		</audio>
+		<img src="water2.png" id="water2">
+		<img src="water3.png" id="water3">
+		<img src="water.png">
+		<div id="waterbut"> </div>
+		<p>⬇︎ Water Plants!</p>
+		<div class="goback" id="waterarrow"><<br></div>
+	</div>
+
+	<!--선물상자ㅏㅏ-->
+	<div id="boxset">
+		<div class="setbackground"></div>
+		<div id="box3"></div>
+		<div id="box2"></div>
+		<div id="box1"></div>
+		<p>Customize Your Own Box</p>
+		<div class="goback" id="boxarrow"><<br></div>
+	</div>
+
+	
+
+
+
+
+	<script type="text/javascript">
+
+		switch1.onclick = function(){tapSound.play();}
+			tapSound.onended = function(){
+				center.style.animationPlayState = "running";
+				triangle.style.animationPlayState = "running";
+		}
+
+		var toggle = "off";
+		boxcap.onclick = function(){
+			if (toggle == "off"){
+				toggle = "on";
+				boxcap.style.animationPlayState = "running";
+				bell.play();
+					fairy1.style.animationPlayState = "running";
+					fairy2.style.animationPlayState = "running";
+					fairy3.style.animationPlayState = "running";
+					fairy4.style.animationPlayState = "running";
+					clock.style.animationPlayState = "running";
+					clocktext.style.animationPlayState = "running";
+					boxbox.style.animationPlayState = "running";
+					mini.style.animationPlayState = "running";
+
+
+			//------------눈내리기1------------//
+		snowdrop.style.animationPlayState = "running";
+
+			for(var i=0; i<22; i++){
+				var t = document.getElementById("snowdrop");
+				var k = t.cloneNode(true);
+				k.className = "snow1";
+
+				k.style.left = Math.random() * 1750 + i + "px";
+				k.style.top = Math.random() * 200 + i + "px";
+
+				k.style.animationDelay = i * 0.3 + "s";
+				k.style.display = "block";
+				snowCon.appendChild(k);
+
+				}
+			//------------눈내리기2------------//
+		snowdrop2.style.animationPlayState = "running";		
+			for(var i=0; i<20; i++){
+				var e = document.getElementById("snowdrop2");
+				var f = e.cloneNode(true);
+				f.className = "snow2";
+
+				f.style.left = Math.random() * 1750 + i + "px";
+				f.style.top = Math.random() * 200 + i + "px";
+				f.style.animationDelay = i * 0.3 + "s";
+				f.style.display = "block";
+				snowCon.appendChild(f);
+
+				}
+
+		}else{toggle = "off";
+				bell.pause();
+			}
+		}
+
+		
+		snowdrop.style.display = "none";
+		snowdrop2.style.display = "none";
+	//------------시계------------//
+		// 날짜 설정 we're counting down to
+			var countDownDate = new Date("Dec. 25, 2018 00:00:00").getTime();
+		// Update the count down every 1 second
+			var x = setInterval(function() {
+		// Get todays date and time
+			var now = new Date().getTime();
+		// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+		// Output the result in an element with id="clock"
+			document.getElementById("clock").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+		}, 1000);
+
+
+
+	//카드 뒤집기//
+		var bc = document.querySelectorAll(".bc");
+		var fc = document.querySelectorAll(".fc");
+		var card = document.querySelectorAll(".card");
+		
+		
+		mini.onclick = function(){
+			for(var i = 0; i<card.length;i++){
+				card[i].style.animationPlayState = "running";
+			}
+			
+			one.style.animationPlayState = "running";
+		}
+
+		card[9].onmouseover = function(){
+			card[9].style.cursor = "pointer";
+		}
+		card[9].onclick = function(){
+			card[0].style.top = "300px";
+			card[0].style.left = "400px";
+			card[0].style.width = "200px";
+			card[0].childNodes[1].style.width = "200px";
+			card[0].childNodes[3].style.width = "200px";
+			
+			setTimeout(function(){
+			card[1].style.top = "300px";
+			card[1].style.left = "650px";
+			card[1].style.width = "200px";
+			card[1].childNodes[1].style.width = "200px";
+			card[1].childNodes[3].style.width = "200px";
+			},100)
+			
+			setTimeout(function(){
+			card[2].style.top = "300px";
+			card[2].style.left = "900px";
+			card[2].style.width = "200px";
+			card[2].childNodes[1].style.width = "200px";
+			card[2].childNodes[3].style.width = "200px";
+			},200)
+		
+			setTimeout(function(){
+			card[3].style.top = "300px";
+			card[3].style.left = "1150px";
+			card[3].style.width = "200px";
+			card[3].childNodes[1].style.width = "200px";
+			card[3].childNodes[3].style.width = "200px";
+			},300)
+			
+			setTimeout(function(){
+			card[4].style.top = "300px";
+			card[4].style.left = "1400px";
+			card[4].style.width = "200px";
+			card[4].childNodes[1].style.width = "200px";
+			card[4].childNodes[3].style.width = "200px";
+			},400)
+
+			setTimeout(function(){
+			card[5].style.top = "600px";
+			card[5].style.left = "400px";
+			card[5].style.width = "200px";
+			card[5].childNodes[1].style.width = "200px";
+			card[5].childNodes[3].style.width = "200px";
+			},500)
+
+			setTimeout(function(){
+			card[6].style.top = "600px";
+			card[6].style.left = "650px";
+			card[6].style.width = "200px";
+			card[6].childNodes[1].style.width = "200px";
+			card[6].childNodes[3].style.width = "200px";
+			},600)
+
+			setTimeout(function(){
+			card[7].style.top = "600px";
+			card[7].style.left = "900px";
+			card[7].style.width = "200px";
+			card[7].childNodes[1].style.width = "200px";
+			card[7].childNodes[3].style.width = "200px";
+			},700)
+
+			setTimeout(function(){
+			card[8].style.top = "600px";
+			card[8].style.left = "1150px";
+			card[8].style.width = "200px";
+			card[8].childNodes[1].style.width = "200px";
+			card[8].childNodes[3].style.width = "200px";
+			},800)
+
+			setTimeout(function(){
+			card[9].style.top = "600px";
+			card[9].style.left = "1400px";
+			card[9].style.width = "200px";
+			card[9].childNodes[1].style.width = "200px";
+			card[9].childNodes[3].style.width = "200px";
+			},900)
+		}
+
+		card[0].onmouseover = function(){
+			card[0].style.cursor = "pointer";
+			card[0].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[0].childNodes[3].style.opacity = 0;
+				card[0].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[0].onmouseout = function(){
+			
+			card[0].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[0].childNodes[3].style.opacity = 1;
+				card[0].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+
+		
+		card[1].onmouseover = function(){
+			
+			card[1].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[1].childNodes[3].style.opacity = 0;
+				card[1].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[1].onmouseout = function(){
+			
+			card[1].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[1].childNodes[3].style.opacity = 1;
+				card[1].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+
+		card[2].onmouseover = function(){
+			
+			card[2].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[2].childNodes[3].style.opacity = 0;
+				card[2].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[2].onmouseout = function(){
+			
+			card[2].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[2].childNodes[3].style.opacity = 1;
+				card[2].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+		
+		card[3].onmouseover = function(){
+
+			card[3].style.cursor = "pointer";			
+			card[3].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[3].childNodes[3].style.opacity = 0;
+				card[3].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[3].onmouseout = function(){
+			
+			card[3].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[3].childNodes[3].style.opacity = 1;
+				card[3].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+		
+		card[4].onmouseover = function(){
+			card[4].style.cursor = "pointer";
+			card[4].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[4].childNodes[3].style.opacity = 0;
+				card[4].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[4].onmouseout = function(){
+			
+			card[4].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[4].childNodes[3].style.opacity = 1;
+				card[4].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+		
+		card[5].onmouseover = function(){
+			
+			card[5].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[5].childNodes[3].style.opacity = 0;
+				card[5].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[5].onmouseout = function(){
+			
+			card[5].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[5].childNodes[3].style.opacity = 1;
+				card[5].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+
+		card[6].onmouseover = function(){
+			
+			card[6].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[6].childNodes[3].style.opacity = 0;
+				card[6].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[6].onmouseout = function(){
+			
+			card[6].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[6].childNodes[3].style.opacity = 1;
+				card[6].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+		
+		card[7].onmouseover = function(){
+			
+			card[7].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[7].childNodes[3].style.opacity = 0;
+				card[7].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[7].onmouseout = function(){
+			card[7].style.cursor = "pointer";
+			card[7].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[7].childNodes[3].style.opacity = 1;
+				card[7].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+		
+		card[8].onmouseover = function(){
+			
+			card[8].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[8].childNodes[3].style.opacity = 0;
+				card[8].childNodes[3].style.zIndex = "-1";
+			},200)
+		}
+		card[8].onmouseout = function(){
+			
+			card[8].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[8].childNodes[3].style.opacity = 1;
+				card[8].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+		
+		card[9].onmouseover = function(){
+			
+			card[9].style.transform = "translate(-50%,-50%) rotateY(180deg)";
+			setTimeout(function(){
+				card[9].childNodes[3].style.opacity = 0;
+		 	},200)
+		}
+		card[9].onmouseout = function(){
+			
+			card[9].style.transform = "translate(-50%,-50%) rotateY(0deg)";
+			setTimeout(function(){
+				card[9].childNodes[3].style.opacity = 1;
+				card[9].childNodes[3].style.zIndex = "1";
+			},200)			
+		}
+
+
+	card[3].onclick = function(){
+			heartfallset.style.animationPlayState = "running";
+			heart.style.animationPlayState = "running";
+			//하트 드래그앤드롭//
+
+			for(var i = 0; i<10; i++){
+
+					var a = document.getElementById("heart");
+					var c = a.cloneNode(true);
+					c.style.left= Math.random()*1000 + 300 + "px";
+					c.style.top= Math.random()*400 + 100 + "px";
+					
+					document.body.appendChild(c);
+					console.log(window.innerWidth, window.innerHeight);
+
+				}
+	
+
+			//드래그앤드롭//
+
+			(function(){
+				var d = false;
+				var target,dx,dy;
+				var z = document.getElementsByClassName("drag");
+				for(var i=0; i<z.length; i++){
+					z[i].style.display = "block";
+					z[i].style.position = "absolute";
+					z[i].style.cursor = "pointer";
+					z[i].ondragstart = function(e)
+				{e.preventDefault();};
+					z[i].onmousedown = function(e){d = true; dx = e.offsetX; dy = e.offsetY; target = e.target;}
+					z[i].onmouseup = function(){d=false;}
+					window.onmousemove = function(e){
+						if(d){ target.style.left = (e.clientX - dx) +"px";
+								target.style.top = (e.clientY - dy) + "px";}
+					}
+				}
+			})();
+	}
+
+	heartarrow.onclick = function(){
+		heartfallset.display= none;
+		heart.style.display= none;
+	}
+
+	card[7].onclick = function(){
+
+		waterset.style.animationPlayState = "running";
+
+			document.getElementById("waterbut").onmousedown = function(){mouseDown()};
+			document.getElementById("waterbut").onmouseup = function(){mouseUp()};
+
+			function mouseDown() {
+				watersound.play();
+				water2.style.animationPlayState = "running";
+				water3.style.animationPlayState = "running";				
+			}
+			function mouseUp() {
+				watersound.pause();
+				water2.style.animationPlayState = "paused";
+				water3.style.animationPlayState = "paused";	
+			}
+	}
+
+	waterarrow.onclick = function(){
+		waterset.style.animationPlayState = "paused";
+	}
+
+	card[0].onclick = function(){
+		boxset.style.animationPlayState = "running";
+
+		var currentBox1 = 1;
+
+			box1.onclick = function(){
+				if(currentBox1 == 1){
+					box1.style.background = "url('box1-1.png')";
+					currentBox1 = 2;
+				}else if(currentBox1 == 2){
+					box1.style.background = "url('box1-2.png')";
+					currentBox1 = 3;
+				}else if(currentBox1 == 3){
+					box1.style.background = "url('box1-3.png')";
+					currentBox1 = 4;
+				}else if(currentBox1 == 4){
+					box1.style.background = "url('box1-4.png')";
+					currentBox1 = 5;
+				}else if(currentBox1 == 5){
+					box1.style.background = "url('box1-5.png')";
+					currentBox1 = 6;
+				}else if(currentBox1 == 6){
+					box1.style.background = "url('box1-0.png')";
+					currentBox1 = 1;
+				}
+				box1.style.backgroundSize = "cover";
+			}
+
+		var currentBox2 = 1;
+
+			box2.onclick = function(){
+				if(currentBox2 == 1){
+					box2.style.background = "url('box2-1.png')";
+					currentBox2 = 2;
+				}else if(currentBox2 == 2){
+					box2.style.background = "url('box2-2.png')";
+					currentBox2 = 3;
+				}else if(currentBox2 == 3){
+					box2.style.background = "url('box2-3.png')";
+					currentBox2 = 4;
+				}else if(currentBox2 == 4){
+					box2.style.background = "url('box2-4.png')";
+					currentBox2 = 5;
+				}else if(currentBox2 == 5){
+					box2.style.background = "url('box2-5.png')";
+					currentBox2 = 6;
+				}else if(currentBox2 == 6){
+					box2.style.background = "url('box2-0.png')";
+					currentBox2 = 1;
+				}
+				box2.style.backgroundSize = "cover";
+			}
+		var currentBox3 = 1;
+
+			box3.onclick = function(){
+				if(currentBox3 == 1){
+					box3.style.background = "url('box3-1.png')";
+					currentBox3 = 2;
+				}else if(currentBox3 == 2){
+					box3.style.background = "url('box3-2.png')";
+					currentBox3 = 3;
+				}else if(currentBox3 == 3){
+					box3.style.background = "url('box3-3.png')";
+					currentBox3 = 4;
+				}else if(currentBox3 == 4){
+					box3.style.background = "url('box3-4.png')";
+					currentBox3 = 5;
+				}else if(currentBox3 == 5){
+					box3.style.background = "url('box3-5.png')";
+					currentBox3 = 6;
+				}else if(currentBox3 == 6){
+					box3.style.background = "url('box3-0.png')";
+					currentBox3 = 1;
+				}
+				box3.style.backgroundSize = "cover";
+			}
+	}
+
+	boxarrow.onclick = function(){
+		boxset.style.animationPlayState = "paused";
+	}
+	
+
+
+	</script>
+
+
+
+</body>
+</html>
